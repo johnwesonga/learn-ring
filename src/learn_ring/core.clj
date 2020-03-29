@@ -8,7 +8,7 @@
             [reitit.ring.middleware.exception :as exception]
             [ring.middleware.reload :refer [wrap-reload]]
             [ring.middleware.resource :refer [wrap-resource]]
-            [ring.middleware.content-type]
+            [ring.middleware.content-type :refer [wrap-content-type]]
             )
   (:gen-class))
 
@@ -24,15 +24,15 @@
     (ring/router
       [["/" handler]
        ["/ping" {:name ::ping
-                 :get ping}]
-       ["/css/*" (ring/create-resource-handler)]]
+                 :get ping}]]
       {:exception pretty/exception})
     (ring/create-default-handler
       {:not-found (constantly {:status 404, :body "oops"})})))
 
 (def app (-> #'router
              (wrap-reload)
-             (wrap-resource "public")))
+             (wrap-resource "public")
+             ))
 
 
 (defn -main
