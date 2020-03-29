@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # learn-ring
 
 A Clojure library designed to ... well, that part is up to you.
@@ -20,3 +21,6 @@ Public License, v. 2.0 are satisfied: GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or (at your
 option) any later version, with the GNU Classpath Exception which is available
 at https://www.gnu.org/software/classpath/license.html.
+=======
+# learn-ring
+>>>>>>> 2408ae01f07cec088358db42e9db8c832570bf49
